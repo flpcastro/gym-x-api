@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { RegisterUseCase } from './register'
 import { compare } from 'bcryptjs'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
-import { UserAlreadyExists } from './errors/user-already-exists'
+import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 
 describe('Register Use Case', () => {
   it('should be able to register', async () => {
@@ -54,6 +54,6 @@ describe('Register Use Case', () => {
         email,
         password: '123456',
       }),
-    ).rejects.toBeInstanceOf(UserAlreadyExists)
+    ).rejects.toBeInstanceOf(UserAlreadyExistsError)
   })
 })
