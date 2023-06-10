@@ -163,7 +163,7 @@ Rode os testes e2e
 
 # Documentation
 
-<div>
+<div align="center">
     <img alt="Logo" src="./src/docs/swagger-screenshot.png" width="700" height="400">
     <img alt="Logo" src="./src/docs/database-relations.png" width="400" height="600">
 </div>
