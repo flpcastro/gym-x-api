@@ -164,8 +164,8 @@ Rode os testes e2e
 # Documentation
 
 <div align="center">
-    <img alt="Logo" src="./src/docs/swagger-screenshot.png" width="700" height="200">
-    <img alt="Logo" src="./src/docs/database-relations.png" width="700" height="200">
+    <img alt="Logo" src="./src/docs/swagger-screenshot.png" width="400" height="300">
+    <img alt="Logo" src="./src/docs/database-relations.png" width="400" height="300">
 </div>
 
 ## Endpoints
