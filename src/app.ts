@@ -1,16 +1,33 @@
 import fastify from 'fastify'
+import path from 'path'
 
 import { ZodError } from 'zod'
 import { env } from './env'
 
 import fastifyJwt from '@fastify/jwt'
 import fastifyCookie from '@fastify/cookie'
+import fastifySwagger from '@fastify/swagger'
+import { fastifySwaggerUi } from '@fastify/swagger-ui'
 
 import { usersRoutes } from './http/controllers/users/routes'
 import { gymsRoutes } from './http/controllers/gyms/routes'
 import { checkInsRoutes } from './http/controllers/check-ins/routes'
 
 export const app = fastify()
+
+app.register(fastifySwagger, {
+  mode: 'static',
+  specification: {
+    path: path.join(__dirname, 'docs', 'swagger.json'),
+    baseDir: path.join(__dirname, 'docs'),
+  },
+})
+
+app.register(fastifySwaggerUi, {
+  baseDir: path.join(__dirname, 'docs'),
+  routePrefix: '/docs',
+  staticCSP: true,
+})
 
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,

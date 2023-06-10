@@ -7,6 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator erd {
+  provider = "prisma-erd-generator"
+  output   = "../src/docs/database-relations.png"
+}
+
 enum Role {
   ADMIN
   MEMBER
